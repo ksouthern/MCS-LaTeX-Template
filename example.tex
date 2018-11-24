@@ -129,21 +129,21 @@ $\{\wedge,\oplus\} $ where $p\oplus q \equiv\neg (p\iff q)$
 $p \vee (q \wedge r) \vdash p \vee q$ 
 \\
 \begin{logicproof}{2}
-	p $\lor$ (q $\land$ r) & Premise
+	p \lor (q \land r) & Premise
 	\\
 	\begin{subproof}
 		p & Assumption
 		\\
-		p $\lor$ q & $\lor_{i}$, 2
+		p \lor q & \lor_{i}, 2
 	\end{subproof}
 	\begin{subproof}
-		q $\land$ r & Assumption
+		q \land r & Assumption
 		\\
-		q & $\land_{e}$, 4
+		q & \land_{e}, 4
 		\\
-		p $\lor$ q & $\lor_{i}$, 5
+		p \lor q & \lor_{i}, 5
 	\end{subproof}
-	p $\lor$ q & $\lor_{e}$, 1, 2--3, 4--6
+	p \lor q & \lor_{e}, 1, 2--3, 4--6
 \end{logicproof}
 \subsection{}
 I guess y'all need another subsection anyway
