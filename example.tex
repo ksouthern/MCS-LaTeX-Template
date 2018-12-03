@@ -13,6 +13,7 @@
 \usepackage{textcomp}
 \usepackage{logicproof}
 \usepackage{float}
+\bibliographystyle{plain}
 %opening
 \title{MCS Assignment 2018-19 LaTeX template}
 \author{abcd12} %REPLACE WITH YOUR CIS CODE
@@ -146,5 +147,7 @@ $p \vee (q \wedge r) \vdash p \vee q$
 	p \lor q & \lor_{e}, 1, 2--3, 4--6
 \end{logicproof}
 \subsection{}
-I guess y'all need another subsection anyway
+I guess y'all need another subsection anyway, so lets learn how to cite\cite{exampleCite}. If you want to cite a book or article, you need to find the BibTeX entry for it (just google the title and bibtex and you'll find it). But it in the bib.bib file, and then when you want to cite it just do backslash cite.
+\bibliographystyle{plain}
+\bibliography{bib}
 \end{document}
