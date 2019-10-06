@@ -135,29 +135,23 @@ $p \vee (q \wedge r) \vdash p \vee q$
 
 \[
 \Jproof{
+	\proofline{\lnot a \land b \land (a\lor (b\Rightarrow c))}{Premise}
+	\proofline{\lnot a}{$\land$ e (1)}
+	\proofline{\lnot b}{$\land$ e (1)}
+	\proofline{\lnot a\lor(b\Rightarrow c)}{$\land$ e (1)}
 	\cablk{
-		\proofline{((P\rightarrow Q)\land (\neg R \rightarrow\neg Q))}{Supposition}
-		\cablk{
-			\proofline{P}{Supposition}
-			\proofline{((P\rightarrow Q)\land (\neg R\rightarrow\neg Q))}{1 Repeat}
-			\proofline{(P\rightarrow Q)}{3 Simplification}
-			\proofline{Q}{2, 4 Modus Ponens}
-			\proofline{(\neg R\rightarrow\neg Q)}{3 Simplification}
-			\cablk{
-				\proofline{\neg R}{Supposition}
-				\proofline{(\neg R\rightarrow\neg Q)}{6 Repeat}
-				\proofline{\neg Q}{7, 8 Modus Ponens}
-				\proofline{Q}{5 Repeat}
-			}{
-				\proofline{R}{7--10 Reductio ad Absurdum}  
-			}
-		}{
-			\proofline{(P\rightarrow R)}{2-11 Conditionalization}
-		}
-	}{
-		\proofline{(((P\rightarrow Q)\land (\neg R\rightarrow\neg Q))\rightarrow(P\rightarrow R))}{1--12 Conditionalization}
+		\proofline{a}{Assumption}
+		\proofline{\bot}{$\lnot$ e (2) (5)}
+		\proofline{b\Rightarrow c}{$\bot$ e (6)}
+	}	
+	\cablk{
+		\proofline{b\Rightarrow c}{Assumption}
+		\proofline{b\Rightarrow c}{copy (8)}
 	}
-}
+	\proofline{b\Rightarrow c}{$\lor$ e (4) (5-7)(8-9)}
+	\proofline{c}{$\Rightarrow$ e (3) (10)}
+	\proofline{c\lor d}{$\lor$ i (11)}
+}		
 \]
 \subsection{}
 I guess you all need another subsection anyway, so lets learn how to cite\cite{exampleCite}. If you want to cite a book or article, you need to find the BibTeX entry for it (just google the title and bibtex and you'll find it). But it in the bib.bib file, and then when you want to cite it just do backslash cite.
