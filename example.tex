@@ -13,9 +13,10 @@
 \usepackage{textcomp}
 \usepackage{logicproof}
 \usepackage{float}
+\usepackage{natded}
 \bibliographystyle{plain}
 %opening
-\title{MCS Assignment 2018-19 LaTeX template}
+\title{MCS Assignment 2019-20 LaTeX template}
 \author{abcd12} %REPLACE WITH YOUR CIS CODE
 
 \begin{document}
@@ -129,25 +130,37 @@ $\{\wedge,\oplus\} $ where $p\oplus q \equiv\neg (p\iff q)$
 \subsection{}
 $p \vee (q \wedge r) \vdash p \vee q$ 
 \\
-\begin{logicproof}{2}
-	p \lor (q \land r) & Premise
-	\\
-	\begin{subproof}
-		p & Assumption
-		\\
-		p \lor q & \lor_{i}, 2
-	\end{subproof}
-	\begin{subproof}
-		q \land r & Assumption
-		\\
-		q & \land_{e}, 4
-		\\
-		p \lor q & \lor_{i}, 5
-	\end{subproof}
-	p \lor q & \lor_{e}, 1, 2--3, 4--6
-\end{logicproof}
+
+
+
+\[
+\Jproof{
+	\cablk{
+		\proofline{((P\rightarrow Q)\land (\neg R \rightarrow\neg Q))}{Supposition}
+		\cablk{
+			\proofline{P}{Supposition}
+			\proofline{((P\rightarrow Q)\land (\neg R\rightarrow\neg Q))}{1 Repeat}
+			\proofline{(P\rightarrow Q)}{3 Simplification}
+			\proofline{Q}{2, 4 Modus Ponens}
+			\proofline{(\neg R\rightarrow\neg Q)}{3 Simplification}
+			\cablk{
+				\proofline{\neg R}{Supposition}
+				\proofline{(\neg R\rightarrow\neg Q)}{6 Repeat}
+				\proofline{\neg Q}{7, 8 Modus Ponens}
+				\proofline{Q}{5 Repeat}
+			}{
+				\proofline{R}{7--10 Reductio ad Absurdum}  
+			}
+		}{
+			\proofline{(P\rightarrow R)}{2-11 Conditionalization}
+		}
+	}{
+		\proofline{(((P\rightarrow Q)\land (\neg R\rightarrow\neg Q))\rightarrow(P\rightarrow R))}{1--12 Conditionalization}
+	}
+}
+\]
 \subsection{}
-I guess y'all need another subsection anyway, so lets learn how to cite\cite{exampleCite}. If you want to cite a book or article, you need to find the BibTeX entry for it (just google the title and bibtex and you'll find it). But it in the bib.bib file, and then when you want to cite it just do backslash cite.
+I guess you all need another subsection anyway, so lets learn how to cite\cite{exampleCite}. If you want to cite a book or article, you need to find the BibTeX entry for it (just google the title and bibtex and you'll find it). But it in the bib.bib file, and then when you want to cite it just do backslash cite.
 \bibliographystyle{plain}
 \bibliography{bib}
 \end{document}
